@@ -1,33 +1,55 @@
 // Object that holds the question type, question, answer, and choices
-function questions(type, questions, answer) {
+function questions(type) {
 	this.type = type;
-	this.questions = "";
+	this.question = "";
 	this.answer = "";
 	this.choices = [];
+	this.chosen = false;
 }
 
 function parse(text) {
-	for(var i = 0; i < text.length; i++) {
-		var question = text[0].split("\n");
+	var question, rand, entry, x;
 
-		for(var j = 0; j < question.length; j++) {
+	for(var i = 0; i < text.length; i++) {
+		question = text[i].split("\n");
+		console.log(question);
+		var entry = new questions(question[0])
+
+		for(var j = 1; j < question.length; j++) {
+			console.log(question[j]);
+			var string = question[j].substr(2, question[j].length);
+
+			if(question[j].charAt(0) == "Q") 
+				entry.question = string;
+			
+			else if(question[j].charAt(0) == "A")
+				entry.answer = string;
+			else
+				entry.choices.push(string);
 			
 		}
-		var entry = new
+		console.log(entry);
+
+		if(question[0] == "muliple choice") 
+			rand = Math.ceil(Math.random() * 4);
+		
 
 	}
 }
+
+var parsedQuestions;
 
 $(document).ready(function() {
 
 	$("#start").on("click", function() {
 		$(".jumbotron").css("display", "none");
 		console.log("TEST");
+		parse(text);
 	});
 
 });
 
-var text = ["multiple choice\nQ What is your name?\nA Bob\nC John\nC James\nC Kelly",
-		
 
-				];
+var text = ["multiple choice\nQ What is your name?\nA Bob\nC John\nC James\nC Kelly"
+		
+			];
