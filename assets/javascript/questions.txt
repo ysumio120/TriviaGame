@@ -1,6 +1,0 @@
-multiple choice
-Q What is your name?
-C Bob
-A John
-C James
-C Kelly
