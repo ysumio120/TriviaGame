@@ -1,0 +1,70 @@
+body {
+
+}
+
+@keyframes correct {
+	0% 	 {background-color:white;}
+	50%	 {background-color:green;}
+	100% {background-color:white;}
+}
+
+@keyframes incorrect {
+	0% 	 {background-color:white;}
+	50%	 {background-color:red;}
+	100% {background-color:white;}
+}
+
+.correct {
+	animation-name: correct;
+	animation-iteration-count: 3;
+	animation-duration: 1s;
+}
+
+.incorrect {
+	animation-name: incorrect;
+	animation-iteration-count: 3;
+	animation-duration: 1s;
+}
+
+p {
+	font-family: 'Baloo Paaji', cursive;
+	font-size: 20px;
+	padding: 5px;
+	margin: auto;
+	width: 70%;
+}
+
+hr {
+	border-width: 2px;
+}
+
+.jumbotron {
+	margin-top: 50px;
+}
+
+.jumbotron p:first-child {
+	font-size: 50px;
+	margin-bottom: 0px;
+}
+
+.timer p {
+	margin-top: 30px;
+	font-size: 30px;
+}
+.question p{
+	font-size: 30px;
+}
+
+.choice:hover {
+	background-color: grey;
+}
+
+.win_loss {
+	padding-top: 30px;
+}
+
+#restart {
+	margin: auto;
+	margin-top: 30px;
+	display: none;
+}
